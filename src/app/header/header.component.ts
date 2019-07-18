@@ -7,11 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   /**
    * Redirect to another route
@@ -19,8 +17,7 @@ export class HeaderComponent implements OnInit {
    */
   onSearch(query: string) {
     if (query) {
-      this.router.navigateByUrl('/search/' + query);
+      this.router.navigateByUrl('/search/' + query.toLowerCase());
     }
   }
-
 }
