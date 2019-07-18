@@ -13,11 +13,14 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Redirect to another route
+   * @param query - search query
+   */
   onSearch(query: string) {
-    console.log('query: ' + query);
-    /*if (query) {
+    if (query) {
       this.router.navigateByUrl('/search/' + query);
-    }*/
+    }
   }
 
 }

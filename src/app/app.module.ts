@@ -9,12 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { DogsListingComponent } from './dogs/dogs-listing/dogs-listing.component';
+import { DogsImagesComponent } from './dogs-images/dogs-images.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    DogsListingComponent
+    DogsListingComponent,
+    DogsImagesComponent
   ],
   imports: [
     BrowserModule,

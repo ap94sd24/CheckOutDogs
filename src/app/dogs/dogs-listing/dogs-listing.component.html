@@ -1,13 +1,22 @@
 <div class="container">
     <div class="row">
-      <ng-container *ngFor="let dog of dogData;let i = index;">
-        <ng-container *ngIf="i < 12">
-          <div class="col-lg-3 col-md-6 col-12 text-center my-3">
-              <mat-card>
-                 <button mat-raised-button>{{dog[0].toUpperCase()}}</button>
-              </mat-card>
-          </div>
+        <ng-container *ngFor="let dog of dogData;let i = index;">
+          <ng-container *ngIf="i < 12 && dogData.length > 0">
+            <div  *ngIf="!isSearch"  class="col-lg-3 col-md-6 col-12 text-center my-3">
+                <mat-card>
+                   <button mat-raised-button (click) ="onClick(dog[0])">{{dog[0].toUpperCase()}}</button>
+                </mat-card>
+            </div>
+            <div  *ngIf="isSearch"  class="col-lg-3 col-md-6 col-12 text-center my-3">
+                <mat-card>
+                   <button mat-raised-button  (click) ="onClick(dog)">{{dog.toUpperCase()}}</button>
+                </mat-card>
+            </div>
+          </ng-container>
         </ng-container>
-      </ng-container>
+        <div class="col-12 text-center" *ngIf="dogData.length === 0">
+            <span>No breeds found!</span>
+        </div>
+
     </div>
 </div>
